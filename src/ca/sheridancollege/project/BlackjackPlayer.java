@@ -12,6 +12,8 @@ public class BlackjackPlayer extends Player {
     private ArrayList<Card> hand;
     private boolean isBusted;
     private BlackjackGame game;
+    
+    private Scanner scanner = new Scanner(System.in);
 
     public BlackjackPlayer(String name, BlackjackGame game) {
         super(name);
@@ -47,9 +49,6 @@ public class BlackjackPlayer extends Player {
        }
    }
    
-   private Scanner scanner = new Scanner(System.in);
-
-
 
    public int evaluateScore() {
        int score = 0;
@@ -67,7 +66,7 @@ public class BlackjackPlayer extends Player {
                    score += 10;
                    break;
                default:
-                   score += card.getValue().ordinal() + 1;
+                   score += card.getValue().getValue();
            }
        }
 
@@ -91,6 +90,7 @@ public class BlackjackPlayer extends Player {
    private boolean shouldHit() {
     System.out.print("Hit? (y/n) ");
     String input = scanner.nextLine();
-    return input.equalsIgnoreCase("y");
+    return input.equals("y");
+
 }
 }
