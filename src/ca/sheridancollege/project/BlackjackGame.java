@@ -8,12 +8,11 @@ import java.util.Collections;
 public class BlackjackGame extends Game {
 
     protected ArrayList<Card> deck;
-    private ArrayList<Card> discardPile;
+
 
     public BlackjackGame() {
         super("Blackjack");
         initializeDeck();
-        initializeDiscardPile();
     }
 
     private void initializeDeck() {
@@ -25,9 +24,7 @@ public class BlackjackGame extends Game {
         }
     }
 
-    private void initializeDiscardPile() {
-        discardPile = new ArrayList<>();
-    }
+
 
     @Override
     public void play() {
